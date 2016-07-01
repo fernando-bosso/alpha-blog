@@ -1,0 +1,27 @@
+<% if @user.errors.any? %>
+<h2>The following errors prevented the user from being created</h2>
+<ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li> 
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @user do |a| %>
+  <p> 
+    <%= a.label :username %><br/>
+    <%= a.text_field :username%>
+  </p> 
+  <p> 
+    <%= a.label :email %> <br/>
+    <%= a.email_field :email%>
+  </p>
+<p> 
+    <%= a.label :password %> <br/>
+    <%= a.password_field :password%>
+  </p>
+  <p>
+    <%= a.submit %>
+  </p>
+
+<% end %>

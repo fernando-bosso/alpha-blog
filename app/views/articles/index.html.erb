@@ -1,14 +1,23 @@
 <h1>Listing Articles</h1>
 <%= link_to "Create new article", new_article_path %>
-<table>
+<table class="table table-striped table-responsive">
   <tr>
+    <th> Criador </th>
     <th> Title </th>
     <th> Description </th>
+    <th> Criado  </th>
+    <th> Modificado  </th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
   <% @articles.each do |a| %>
     <tr>
+      <td> <%= a.user.username if a.user %> </td>
       <td> <%= a.title %> </td>
       <td> <%= a.description %> </td>
+      <td> <%=  time_ago_in_words(a.created_at)  %> ago </td>
+      <td> <%=  time_ago_in_words(a.updated_at)  %> ago </td>
       <td> <%= link_to "Edit", edit_article_path(a) %> </td>  
       <td> <%= link_to "Show", article_path(a) %> </td>  
       <td> <%= link_to "Delete", article_path(a), method: :delete, data:{confirm: "Are you sure?"} %> </td>  

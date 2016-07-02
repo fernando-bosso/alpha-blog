@@ -1,0 +1,16 @@
+<h1 align="center"> Login </h1>
+<div class="form-group">
+  <%= form_for :session, :html=>{ class: "form-horizontal", role: "form"}, url: login_path do |a| %>
+    <p> 
+      <%= a.label :email, class: "control-label" %> <br/>
+      <%= a.email_field :email, class: "form-control" %>
+    </p>
+    <p> 
+      <%= a.label :password, class: "control-label" %> <br/>
+      <%= a.password_field :password, class: "form-control" %>
+    </p>
+    <p align="center">
+      <%= a.submit "Log in", class:'btn btn-primary btn-lg' %>
+    </p>
+  <% end %>
+</div>

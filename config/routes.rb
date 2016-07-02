@@ -7,12 +7,16 @@ Rails.application.routes.draw do
 
   root 'pages#home'
   get 'about', to: 'pages#about'
+  
   get 'signup', to: 'users#new'
+  get 'login', to: 'sessions#new'
 
 
-  post 'users', to: 'users#create'
+  post 'users',   to: 'users#create'
+  post 'login',   to: 'sessions#create' 
+  delete 'logout',   to: 'sessions#destroy'
+   
   resources :users, except: [:new]
-
   resources :articles
 
   # Example of regular route:

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
             length:{maximum: 105},
             uniqueness:{case_sensitive: false, message:"Erro Caralho"},
             format: {with: VALID_EMAIL_REGEX }
+  validates :password, presence: true
 
   has_secure_password
 

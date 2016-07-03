@@ -1,0 +1,12 @@
+<div class="form-horizontal">
+<%= form_for @category do |category| %>
+  <p> 
+    <%= category.label :name %><br/>
+    <%= category.text_field :name%>
+  </p> 
+  <p>
+    <%= category.submit %>
+  </p>
+<% end %>
+
+</div>

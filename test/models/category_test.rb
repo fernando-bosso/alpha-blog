@@ -32,4 +32,6 @@ class CategoryTest < ActiveSupport::TestCase
      @category.name = "a"*2
     assert_not @category.valid?
   end
+
+  
 end

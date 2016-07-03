@@ -1,9 +1,13 @@
 <h1> All Categories </h1>
 
-<% @categories.each do |category| %>
-  <ul class="listing">
-    <div class="row">
-      <li> <%= link_to "#{category.name}", category_path(category) %> </li>
-    </div>
-  </ul>
+<div align="center">
+  <%= will_paginate @categories, renderer: BootstrapPagination::Rails %>
+  <% @categories.each do |category| %>
+    <ul class="listing">
+      <div class="row">
+        <li> <%= link_to "#{category.name}", category_path(category) %> </li>
+      </div>
+    </ul>
   <% end %>
+  <%= will_paginate @categories, renderer: BootstrapPagination::Rails %>
+</div>
